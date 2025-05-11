@@ -5,17 +5,23 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   server: {
     host: '0.0.0.0',
-    port: 5001,
+    port: 5000
   },
   integrations: [tailwind()],
   vite: {
     server: {
+      watch: {
+        usePolling: true,
+        interval: 1000,
+      },
       hmr: {
-        clientPort: 5001,
-        port: 5001,
+        clientPort: 443,
+        port: 5000
       },
       strictPort: false,
-      cors: true
+      cors: true,
+      // Allow the Replit domain to access the server
+      allowedHosts: ['localhost', '*.replit.dev', '*.worf.replit.dev', '*.repl.co', '*.replit.app', 'all']
     }
   }
 });
