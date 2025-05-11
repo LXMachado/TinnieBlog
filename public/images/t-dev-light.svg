@@ -2,5 +2,5 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <circle cx="256" cy="256" r="240" stroke="#00C2FF" stroke-width="32" />
   <path d="M140 160H372V220H290V400H222V220H140V160Z" fill="#00C2FF"/>
-  <path d="M370 300C370 300 370 380 370 400C370 420 350 440 330 440" stroke="#00C2FF" stroke-width="32" stroke-linecap="round"/>
+  <path d="M370 300C370 300 370 380 370 410C370 430 350 450 330 450" stroke="#00C2FF" stroke-width="32" stroke-linecap="round"/>
 </svg>
