@@ -1,0 +1,56 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: URL | string;
+  type?: 'website' | 'article';
+}
+
+const {
+  title = 'Tinnie Dev | AI & Web Development Hub',
+  description = 'Tech news, AI tutorials, and web development trends. Join our vibrant community of tech enthusiasts at Tinnie Dev.',
+  image = '/og-image.png',
+  canonicalURL = new URL(Astro.url.pathname, Astro.site),
+  type = 'website',
+} = Astro.props;
+
+const ogImage = new URL(image, Astro.site).href;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#007afe" />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={ogImage} />
+
+<!-- Other Important Meta Tags -->
+<meta name="format-detection" content="telephone=no" />
+<meta name="robots" content="index, follow" />
+
+<!-- Font preload for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

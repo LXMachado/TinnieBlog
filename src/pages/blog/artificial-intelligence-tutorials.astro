@@ -1,0 +1,333 @@
+---
+import Layout from '../../components/Layout.astro';
+import Card from '../../components/Card.astro';
+import Button from '../../components/Button.astro';
+
+const tutorialCategories = [
+  {
+    title: 'Machine Learning',
+    count: 8,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
+  },
+  {
+    title: 'Natural Language Processing',
+    count: 6,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>`,
+  },
+  {
+    title: 'Computer Vision',
+    count: 5,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>`,
+  },
+  {
+    title: 'Web Development',
+    count: 10,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>`,
+  },
+];
+
+const tutorials = [
+  {
+    title: 'Build Your Own AI Chatbot with React and OpenAI API',
+    description: 'This tutorial guides you through building a smart, conversational chatbot using React and the OpenAI API, perfect for enhancing your web applications with AI.',
+    difficulty: 'Intermediate',
+    duration: '2 hours',
+    category: 'Web Development',
+    href: '/blog/blog-post',
+  },
+  {
+    title: 'Getting Started with TensorFlow.js for Browser-Based ML',
+    description: 'Learn how to implement machine learning models directly in the browser using TensorFlow.js, enabling client-side AI without requiring server infrastructure.',
+    difficulty: 'Beginner',
+    duration: '1.5 hours',
+    category: 'Machine Learning',
+    href: '/blog/blog-post',
+  },
+  {
+    title: 'Text Classification with Hugging Face Transformers',
+    description: 'Explore how to use Hugging Face's transformer models to build an effective text classification system for sentiment analysis and content categorization.',
+    difficulty: 'Intermediate',
+    duration: '2.5 hours',
+    category: 'Natural Language Processing',
+    href: '/blog/blog-post',
+  },
+  {
+    title: 'Building a Real-Time Object Detection App with TensorFlow',
+    description: 'Create a web application that can detect and classify objects in real-time using TensorFlow and a webcam, with step-by-step implementation guidance.',
+    difficulty: 'Advanced',
+    duration: '3 hours',
+    category: 'Computer Vision',
+    href: '/blog/blog-post',
+  },
+  {
+    title: 'Creating a Machine Learning Recommender System',
+    description: 'Learn to build a recommendation engine similar to those used by streaming and e-commerce platforms to suggest content based on user preferences.',
+    difficulty: 'Intermediate',
+    duration: '2 hours',
+    category: 'Machine Learning',
+    href: '/blog/blog-post',
+  },
+  {
+    title: 'Implementing a Voice Assistant with Web Speech API',
+    description: 'Build your own voice-controlled assistant using JavaScript, the Web Speech API, and natural language processing techniques.',
+    difficulty: 'Intermediate',
+    duration: '2.5 hours',
+    category: 'Natural Language Processing',
+    href: '/blog/blog-post',
+  },
+];
+
+const difficultyColors = {
+  'Beginner': 'bg-green-100 text-green-800 dark:bg-green-800/30 dark:text-green-300',
+  'Intermediate': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-300',
+  'Advanced': 'bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-300',
+};
+---
+
+<Layout 
+  title="Artificial Intelligence & Web Development Tutorials | Tinnie Dev"
+  description="Explore the latest in artificial intelligence and web development with expert tutorials and guides. Learn AI applications, coding techniques, and best practices to enhance your skills and stay ahead in the tech industry."
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/5 dark:to-primary/20 z-0"></div>
+    
+    <div class="container-custom relative z-10 py-20 md:py-32">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-orbitron font-bold mb-6 text-gray-900 dark:text-white">
+          Artificial Intelligence & Web Development Tutorials
+        </h1>
+        
+        <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">
+          Explore the latest in artificial intelligence and web development with expert tutorials and guides. Learn AI applications, coding techniques, and best practices to enhance your skills and stay ahead in the tech industry.
+        </p>
+        
+        <Button href="#tutorials" variant="primary" size="lg">
+          Explore Tutorials
+        </Button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Categories Section -->
+  <section class="py-20">
+    <div class="container-custom">
+      <h2 class="text-3xl font-orbitron font-bold mb-12 text-gray-900 dark:text-white">
+        Tutorial Categories
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {tutorialCategories.map((category, index) => (
+          <Card className="h-full flex flex-col items-center text-center p-8 slide-up" style={`animation-delay: ${0.1 + index * 0.1}s`}>
+            <div class="text-primary mb-4" set:html={category.icon} />
+            <h3 class="text-xl font-orbitron font-semibold mb-2">{category.title}</h3>
+            <p class="text-gray-700 dark:text-gray-300">{category.count} tutorials</p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Tutorials Section -->
+  <section id="tutorials" class="py-20 bg-gray-50 dark:bg-[#0a1214]">
+    <div class="container-custom">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
+        <h2 class="text-3xl font-orbitron font-bold mb-4 md:mb-0 text-gray-900 dark:text-white">
+          Featured Tutorials
+        </h2>
+        
+        <div class="relative">
+          <select class="px-4 py-2 pr-8 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-primary bg-white dark:bg-gray-800 text-gray-900 dark:text-white appearance-none">
+            <option>All Categories</option>
+            <option>Machine Learning</option>
+            <option>Natural Language Processing</option>
+            <option>Computer Vision</option>
+            <option>Web Development</option>
+          </select>
+          <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {tutorials.map((tutorial, index) => (
+          <Card className="h-full flex flex-col slide-up" style={`animation-delay: ${0.1 + index * 0.1}s`}>
+            <div class="mb-4 flex flex-wrap gap-2">
+              <span class={`inline-block px-3 py-1 rounded-full text-xs font-medium ${difficultyColors[tutorial.difficulty]}`}>
+                {tutorial.difficulty}
+              </span>
+              <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                {tutorial.category}
+              </span>
+              <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                {tutorial.duration}
+              </span>
+            </div>
+            
+            <h3 class="text-xl font-orbitron font-semibold mb-3 text-gray-900 dark:text-white">
+              <a href={tutorial.href} class="hover:text-primary transition-colors duration-200">
+                {tutorial.title}
+              </a>
+            </h3>
+            
+            <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+              {tutorial.description}
+            </p>
+            
+            <div class="mt-auto pt-4">
+              <a 
+                href={tutorial.href}
+                class="text-primary hover:text-primary/80 font-medium inline-flex items-center"
+              >
+                View Tutorial
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </Card>
+        ))}
+      </div>
+      
+      <div class="mt-12 text-center">
+        <Button href="#" variant="outline" size="lg">
+          View All Tutorials
+        </Button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Learning Path Section -->
+  <section class="py-20">
+    <div class="container-custom">
+      <div class="glass p-12 rounded-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-orbitron font-bold mb-6 text-gray-900 dark:text-white">
+              Learning Paths for AI Developers
+            </h2>
+            
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+              Not sure where to start? Follow our carefully designed learning paths to master AI and web development at your own pace.
+            </p>
+            
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 h-6 w-6 text-primary mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <span class="font-semibold text-gray-900 dark:text-white">Beginner to Advanced ML</span>
+                  <p class="text-gray-700 dark:text-gray-300">A comprehensive journey from basic concepts to advanced machine learning techniques.</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 h-6 w-6 text-primary mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <span class="font-semibold text-gray-900 dark:text-white">AI-Powered Web Applications</span>
+                  <p class="text-gray-700 dark:text-gray-300">Learn to integrate artificial intelligence into modern web applications.</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 h-6 w-6 text-primary mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <span class="font-semibold text-gray-900 dark:text-white">NLP Specialist Track</span>
+                  <p class="text-gray-700 dark:text-gray-300">Specialize in natural language processing and conversational AI development.</p>
+                </div>
+              </li>
+            </ul>
+            
+            <Button href="#" variant="primary">
+              Explore Learning Paths
+            </Button>
+          </div>
+          
+          <div class="relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-accent opacity-30 rounded-lg blur-lg"></div>
+            <div class="relative bg-primary/10 dark:bg-primary/20 rounded-lg p-8 flex items-center justify-center">
+              <div class="text-primary animate-float">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Resource Section -->
+  <section class="py-20 bg-gray-50 dark:bg-[#0a1214]">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-orbitron font-bold mb-4 text-gray-900 dark:text-white">
+          Developer Resources
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          Access our curated collection of tools, libraries, and resources to supercharge your AI and web development projects.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <Card className="h-full flex flex-col items-center text-center p-8">
+          <div class="text-primary mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-orbitron font-semibold mb-3">Code Repositories</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">Access our GitHub repositories with sample projects, starter kits, and reusable components.</p>
+          <div class="mt-auto">
+            <Button href="#" variant="outline">
+              Browse Repositories
+            </Button>
+          </div>
+        </Card>
+        
+        <Card className="h-full flex flex-col items-center text-center p-8">
+          <div class="text-primary mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-orbitron font-semibold mb-3">Resource Library</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">Download datasets, model weights, and other assets to jumpstart your development process.</p>
+          <div class="mt-auto">
+            <Button href="#" variant="outline">
+              Explore Resources
+            </Button>
+          </div>
+        </Card>
+        
+        <Card className="h-full flex flex-col items-center text-center p-8">
+          <div class="text-primary mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-orbitron font-semibold mb-3">Community Forums</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">Join discussions, ask questions, and share your projects with our community of developers.</p>
+          <div class="mt-auto">
+            <Button href="#" variant="outline">
+              Join Community
+            </Button>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+</Layout>

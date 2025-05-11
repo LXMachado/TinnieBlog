@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 0, 122, 254; /* Tinnie Blue */
+    --color-accent: 224, 244, 245;
+    --color-bg-light: 255, 255, 255;
+    --color-bg-dark: 12, 22, 24;
+    --color-text-light: 255, 255, 255;
+    --color-text-dark: 30, 41, 59;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-white text-slate-800 dark:bg-[#0c1618] dark:text-white;
+    @apply transition-colors duration-300 ease-in-out;
+    @apply font-poppins;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply my-4 leading-relaxed;
+  }
+
+  a {
+    @apply text-primary hover:text-primary/80 transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/50 dark:bg-slate-800/50 backdrop-blur-md rounded-xl shadow-lg;
+    @apply border border-white/20 dark:border-slate-700/20;
+  }
+
+  .card {
+    @apply p-6 glass;
+    @apply hover:shadow-xl transition-all duration-300 ease-in-out;
+    @apply hover:scale-[1.01];
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-lg;
+    @apply transition-all duration-200 ease-in-out;
+    @apply font-medium text-center text-base;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary/90;
+    @apply shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary text-primary hover:bg-primary/10;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  /* Animation utilities */
+  .fade-in {
+    @apply opacity-0 animate-[fadeIn_0.5s_ease-in-out_forwards];
+  }
+  
+  .slide-up {
+    @apply translate-y-8 opacity-0 animate-[slideUp_0.5s_ease-in-out_forwards];
+  }
+  
+  .slide-in-right {
+    @apply translate-x-8 opacity-0 animate-[slideInRight_0.5s_ease-in-out_forwards];
+  }
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(2rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(2rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

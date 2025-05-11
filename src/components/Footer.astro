@@ -1,0 +1,81 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  {
+    title: 'Navigation',
+    links: [
+      { text: 'Home', href: '/' },
+      { text: 'Blog', href: '/blog/artificial-intelligence-blog' },
+      { text: 'About', href: '/about' },
+      { text: 'Contact', href: '/contact' },
+    ],
+  },
+  {
+    title: 'Blog',
+    links: [
+      { text: 'AI Blog', href: '/blog/artificial-intelligence-blog' },
+      { text: 'Tutorials', href: '/blog/artificial-intelligence-tutorials' },
+      { text: 'Blog Post', href: '/blog/blog-post' },
+    ],
+  },
+  {
+    title: 'Social',
+    links: [
+      { text: 'Twitter', href: 'https://twitter.com/tinniedev' },
+      { text: 'GitHub', href: 'https://github.com/tinniedev' },
+      { text: 'LinkedIn', href: 'https://linkedin.com/in/tinniedev' },
+    ],
+  },
+];
+---
+
+<footer class="bg-gray-50 dark:bg-[#0a1214] border-t border-gray-200 dark:border-gray-800 mt-16">
+  <div class="container-custom py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <a href="/" class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+            <span class="font-orbitron text-white font-bold">T</span>
+          </div>
+          <span class="font-orbitron text-lg font-bold text-primary">Tinnie Dev</span>
+        </a>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">
+          Empowering tech enthusiasts with cutting-edge insights on AI and web development.
+        </p>
+      </div>
+      
+      {footerLinks.map((section) => (
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">{section.title}</h4>
+          <ul class="space-y-2">
+            {section.links.map((link) => (
+              <li>
+                <a 
+                  href={link.href} 
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-200 text-sm"
+                >
+                  {link.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-600 dark:text-gray-400 text-sm">
+        &copy; {currentYear} Tinnie Dev. All rights reserved.
+      </p>
+      <div class="mt-4 md:mt-0 flex gap-4">
+        <a href="/privacy" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-200 text-sm">
+          Privacy Policy
+        </a>
+        <a href="/terms" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-200 text-sm">
+          Terms of Service
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

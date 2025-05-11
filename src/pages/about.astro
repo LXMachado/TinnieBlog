@@ -1,0 +1,223 @@
+---
+import Layout from '../components/Layout.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+
+const teamMembers = [
+  {
+    name: 'Alex Morgan',
+    role: 'Founder & AI Specialist',
+    bio: 'Alex has over 10 years of experience in AI research and development, focusing on natural language processing and machine learning applications.',
+  },
+  {
+    name: 'Sam Chen',
+    role: 'Web Development Lead',
+    bio: 'Sam is a full-stack developer with expertise in modern web frameworks, serverless architecture, and building scalable applications.',
+  },
+  {
+    name: 'Jordan Lee',
+    role: 'Technical Content Writer',
+    bio: 'Jordan specializes in creating comprehensive technical content that makes complex concepts accessible to developers of all skill levels.',
+  },
+];
+
+const values = [
+  {
+    title: 'Innovation',
+    description: 'We constantly explore new technologies and methodologies to stay at the forefront of the tech industry.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+  },
+  {
+    title: 'Education',
+    description: 'We believe in the power of knowledge sharing and making technical concepts accessible to everyone.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>`,
+  },
+  {
+    title: 'Community',
+    description: 'We foster a supportive community where collaboration and knowledge exchange are encouraged.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>`,
+  },
+  {
+    title: 'Excellence',
+    description: 'We are committed to producing high-quality content and fostering a culture of continuous improvement.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>`,
+  },
+];
+---
+
+<Layout 
+  title="Join Our Vibrant Community of Tech Enthusiasts | Tinnie Dev"
+  description="Get to know the team behind Tinnie Dev - a community dedicated to the art and science of coding, creation, and mastery in the digital realm."
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/5 dark:to-primary/20 z-0"></div>
+    
+    <div class="container-custom relative z-10 py-20 md:py-32">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-orbitron font-bold mb-6 text-gray-900 dark:text-white">
+          Join Our Vibrant Community of Tech Enthusiasts
+        </h1>
+        
+        <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">
+          At Tinnie Dev, we are more than just a platform; we are a community dedicated to the art and science of coding, creation, and mastery in the digital realm.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Us Section -->
+  <section class="py-20">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="slide-up" style="animation-delay: 0.1s;">
+          <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-6 text-gray-900 dark:text-white">
+            Get to Know Us
+          </h2>
+          
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            At Tinnie Dev, we are more than just a platform; we are a community dedicated to the art and science of coding, creation, and mastery in the digital realm. Founded by a team of passionate developers and tech enthusiasts, we strive to empower, educate, and inspire individuals at every stage of their tech journey.
+          </p>
+          
+          <h3 class="text-2xl font-orbitron font-semibold mb-4 text-gray-900 dark:text-white">
+            Our Mission
+          </h3>
+          
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            To be the foremost community where coding, creation, and digital mastery converge, fostering innovation, collaboration, and excellence in the tech world.
+          </p>
+          
+          <h3 class="text-2xl font-orbitron font-semibold mb-4 text-gray-900 dark:text-white">
+            Our Vision
+          </h3>
+          
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            To empower, educate, and inspire individuals in their tech pursuits by providing valuable content, fostering a collaborative space, and promoting continuous learning.
+          </p>
+        </div>
+        
+        <div class="glass p-8 rounded-xl slide-in-right" style="animation-delay: 0.3s;">
+          <div class="relative">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent opacity-30 rounded-lg blur"></div>
+            <div class="relative glass p-6 rounded-lg">
+              <h3 class="text-2xl font-orbitron font-semibold mb-6 text-primary">Why Join Us?</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 h-6 w-6 text-primary mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <p class="text-gray-800 dark:text-gray-200">Access to cutting-edge insights on AI and web development</p>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 h-6 w-6 text-primary mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <p class="text-gray-800 dark:text-gray-200">Learn from practical tutorials and comprehensive guides</p>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 h-6 w-6 text-primary mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <p class="text-gray-800 dark:text-gray-200">Connect with a community of like-minded tech enthusiasts</p>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 h-6 w-6 text-primary mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <p class="text-gray-800 dark:text-gray-200">Stay ahead with trends and best practices in technology</p>
+                </li>
+              </ul>
+              
+              <div class="mt-6">
+                <Button href="/contact" variant="primary" className="w-full">
+                  Get In Touch
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Our Values -->
+  <section class="py-20 bg-gray-50 dark:bg-[#0a1214]">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-4 text-gray-900 dark:text-white">
+          Our Core Values
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          These principles guide everything we do at Tinnie Dev and shape our approach to technology and community.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {values.map((value, index) => (
+          <Card className="h-full flex flex-col items-center text-center p-8 slide-up" style={`animation-delay: ${0.1 + index * 0.1}s`}>
+            <div class="text-primary mb-4" set:html={value.icon} />
+            <h3 class="text-xl font-orbitron font-semibold mb-3">{value.title}</h3>
+            <p class="text-gray-700 dark:text-gray-300">{value.description}</p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Meet the Team -->
+  <section class="py-20">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-4 text-gray-900 dark:text-white">
+          Meet the Team
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          The passionate individuals behind Tinnie Dev who are dedicated to sharing their knowledge and expertise.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {teamMembers.map((member, index) => (
+          <Card className="h-full flex flex-col p-8 slide-up" style={`animation-delay: ${0.1 + index * 0.1}s`}>
+            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <span class="text-2xl text-primary font-orbitron font-bold">{member.name.charAt(0)}</span>
+            </div>
+            <h3 class="text-xl font-orbitron font-semibold mb-2 text-center">{member.name}</h3>
+            <p class="text-primary mb-4 text-center">{member.role}</p>
+            <p class="text-gray-700 dark:text-gray-300 text-center">{member.bio}</p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="py-20 bg-gray-50 dark:bg-[#0a1214]">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-6 text-gray-900 dark:text-white">
+          Ready to Join Our Community?
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+          Connect with us to stay updated on the latest in tech and become part of our growing community of innovators and learners.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/blog/artificial-intelligence-blog" variant="outline" size="lg">
+            Read Our Blog
+          </Button>
+          <Button href="/contact" variant="primary" size="lg">
+            Contact Us
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

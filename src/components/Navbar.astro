@@ -1,0 +1,83 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const navItems = [
+  { text: 'Home', href: '/' },
+  { text: 'Blog', href: '/blog/artificial-intelligence-blog' },
+  { text: 'Tutorials', href: '/blog/artificial-intelligence-tutorials' },
+  { text: 'About', href: '/about' },
+  { text: 'Contact', href: '/contact' },
+];
+---
+
+<header class="fixed w-full top-0 z-50 bg-white/70 dark:bg-[#0c1618]/70 backdrop-blur-lg shadow-sm border-b border-gray-200 dark:border-gray-800">
+  <div class="container-custom py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+        <span class="font-orbitron text-white font-bold">T</span>
+      </div>
+      <span class="font-orbitron text-lg md:text-xl font-bold text-primary">Tinnie Dev</span>
+    </a>
+    
+    <div class="hidden md:flex items-center gap-6">
+      <nav class="flex items-center gap-4">
+        {navItems.map(item => (
+          <a 
+            href={item.href} 
+            class="text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors duration-200"
+          >
+            {item.text}
+          </a>
+        ))}
+      </nav>
+      <ThemeToggle />
+    </div>
+    
+    <div class="md:hidden flex items-center gap-2">
+      <ThemeToggle />
+      <button 
+        id="mobile-menu-button" 
+        class="p-2 rounded-md text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+        aria-label="Open mobile menu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile menu, hidden by default -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-[#0c1618] border-b border-gray-200 dark:border-gray-800">
+    <nav class="container-custom py-4 flex flex-col gap-4">
+      {navItems.map(item => (
+        <a 
+          href={item.href} 
+          class="text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors duration-200 py-2"
+        >
+          {item.text}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton?.addEventListener('click', function() {
+      mobileMenu?.classList.toggle('hidden');
+    });
+    
+    // Close menu when clicking on a link
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
+    mobileLinks?.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu?.classList.add('hidden');
+      });
+    });
+  });
+</script>

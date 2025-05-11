@@ -1,0 +1,33 @@
+---
+export interface Props {
+  title?: string;
+  body?: string;
+  href?: string;
+  className?: string;
+}
+
+const { href, title, body, className = "" } = Astro.props;
+---
+
+<div class={`card ${className}`}>
+  <div class="card-content">
+    {title && (
+      <h3 class="text-xl font-orbitron font-semibold mb-3 text-primary dark:text-primary">
+        {href ? <a href={href}>{title}</a> : title}
+      </h3>
+    )}
+    {body && <p class="text-gray-700 dark:text-gray-300">{body}</p>}
+    <slot />
+  </div>
+</div>
+
+<style>
+  .card {
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+</style>

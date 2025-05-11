@@ -1,0 +1,44 @@
+---
+export interface Props {
+  type?: "button" | "submit" | "reset";
+  variant?: "primary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
+  className?: string;
+  href?: string;
+}
+
+const {
+  type = "button",
+  variant = "primary",
+  size = "md",
+  className = "",
+  href,
+  ...rest
+} = Astro.props;
+
+const variantStyles = {
+  primary: "btn-primary",
+  outline: "btn-outline",
+  ghost: "text-primary hover:bg-primary/10 dark:hover:bg-primary/10",
+};
+
+const sizeStyles = {
+  sm: "text-sm px-3 py-1.5",
+  md: "text-base px-5 py-2.5",
+  lg: "text-lg px-6 py-3",
+};
+
+const classes = `btn ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+---
+
+{
+  href ? (
+    <a href={href} class={classes} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes} {...rest}>
+      <slot />
+    </button>
+  )
+}
