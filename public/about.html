@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Tinnie Dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-header {
+      padding: 8rem 0 4rem;
+      text-align: center;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4f1f5 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .dark-mode .about-header {
+      background: linear-gradient(135deg, #0c1618 0%, #162a30 100%);
+    }
+    
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .about-section {
+      margin-bottom: 3rem;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .team-member {
+      text-align: center;
+    }
+    
+    .member-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: rgba(0, 122, 254, 0.1);
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--color-primary);
+    }
+    
+    .member-name {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .member-role {
+      color: #64748b;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .dark-mode .member-role {
+      color: #94a3b8;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .value-card {
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow);
+      background-color: var(--color-card-bg-light);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .dark-mode .value-card {
+      background-color: var(--color-card-bg-dark);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .value-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(0, 122, 254, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .value-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">T</div>
+        <span class="logo-text">Tinnie Dev</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/tutorials.html">Tutorials</a></li>
+          <li><a href="/about.html" class="active">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-header">
+      <div class="container">
+        <h1>Join Our Vibrant Community of Tech Enthusiasts</h1>
+        <p class="hero-text">Get to know the team behind Tinnie Dev and our mission to empower, educate, and inspire individuals in their tech pursuits.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-section">
+            <h2>Get to know us</h2>
+            <p>At Tinnie Dev, we are more than just a platform; we are a community dedicated to the art and science of coding, creation, and mastery in the digital realm. Founded by a team of passionate developers and tech enthusiasts, we strive to empower, educate, and inspire individuals at every stage of their tech journey.</p>
+          </div>
+          
+          <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>To be the foremost community where coding, creation, and digital mastery converge, fostering innovation, collaboration, and excellence in the tech world.</p>
+          </div>
+          
+          <div class="about-section">
+            <h2>Our Vision</h2>
+            <p>To empower, educate, and inspire individuals in their tech pursuits by providing valuable content, fostering a collaborative space, and promoting continuous learning.</p>
+          </div>
+          
+          <div class="about-section">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+              <div class="value-card">
+                <div class="value-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3>Innovation</h3>
+                <p>Embracing cutting-edge technologies and creative approaches to solve complex problems and push the boundaries of what's possible.</p>
+              </div>
+              
+              <div class="value-card">
+                <div class="value-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <h3>Education</h3>
+                <p>Committed to sharing knowledge, providing accessible learning resources, and fostering a culture of continuous skill development.</p>
+              </div>
+              
+              <div class="value-card">
+                <div class="value-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3>Community</h3>
+                <p>Building an inclusive, supportive environment where developers of all backgrounds and skill levels can connect, collaborate, and grow together.</p>
+              </div>
+              
+              <div class="value-card">
+                <div class="value-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3>Excellence</h3>
+                <p>Striving for the highest standards in our content, tutorials, and community interactions, always seeking to deliver value that exceeds expectations.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-photo">JD</div>
+                <h3 class="member-name">Jane Doe</h3>
+                <p class="member-role">Founder & AI Specialist</p>
+                <p>With over a decade of experience in AI and machine learning, Jane leads our AI content and research initiatives.</p>
+              </div>
+              
+              <div class="team-member">
+                <div class="member-photo">JS</div>
+                <h3 class="member-name">John Smith</h3>
+                <p class="member-role">Web Development Lead</p>
+                <p>A seasoned full-stack developer specializing in modern JavaScript frameworks and cutting-edge web technologies.</p>
+              </div>
+              
+              <div class="team-member">
+                <div class="member-photo">AP</div>
+                <h3 class="member-name">Alex Parker</h3>
+                <p class="member-role">Content Strategist</p>
+                <p>Alex shapes our content direction, ensuring we deliver valuable, educational, and engaging material to our community.</p>
+              </div>
+              
+              <div class="team-member">
+                <div class="member-photo">SJ</div>
+                <h3 class="member-name">Sam Johnson</h3>
+                <p class="member-role">Community Manager</p>
+                <p>Dedicated to fostering a supportive and inclusive environment for all Tinnie Dev community members.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <h2>Join Our Community</h2>
+          <p>Become part of our vibrant community of tech enthusiasts, share your knowledge, learn from others, and stay at the forefront of AI and web development trends.</p>
+          <a href="/contact.html" class="btn primary">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo-icon">T</div>
+          <span class="logo-text">Tinnie Dev</span>
+        </div>
+        <p>A hub for AI insights and web development trends.</p>
+      </div>
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/tutorials.html">Tutorials</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container">
+        <p>&copy; 2025 Tinnie Dev. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

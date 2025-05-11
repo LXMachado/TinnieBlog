@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorials - Tinnie Dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .tutorials-header {
+      padding: 8rem 0 4rem;
+      text-align: center;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4f1f5 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .dark-mode .tutorials-header {
+      background: linear-gradient(135deg, #0c1618 0%, #162a30 100%);
+    }
+    
+    .tutorials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .tutorial-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .tutorial-content {
+      flex-grow: 1;
+    }
+    
+    .difficulty {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+    
+    .dark-mode .difficulty {
+      color: #94a3b8;
+    }
+    
+    .difficulty svg {
+      width: 1rem;
+      height: 1rem;
+    }
+    
+    .beginner {
+      color: #10b981;
+    }
+    
+    .intermediate {
+      color: #f59e0b;
+    }
+    
+    .advanced {
+      color: #ef4444;
+    }
+    
+    .tutorial-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+    
+    .dark-mode .tutorial-meta {
+      color: #94a3b8;
+    }
+    
+    .duration {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .duration svg {
+      width: 1rem;
+      height: 1rem;
+    }
+    
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 2rem 0;
+      justify-content: center;
+    }
+    
+    .filter-btn {
+      background-color: rgba(0, 122, 254, 0.1);
+      color: var(--color-primary);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: all 0.3s;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      background-color: var(--color-primary);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">T</div>
+        <span class="logo-text">Tinnie Dev</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/tutorials.html" class="active">Tutorials</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="tutorials-header">
+      <div class="container">
+        <h1>Artificial Intelligence & Web Development Tutorials</h1>
+        <p class="hero-text">Explore the latest in artificial intelligence and web development with expert tutorials and guides. Learn AI applications, coding techniques, and best practices to enhance your skills and stay ahead in the tech industry.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filters">
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn">AI</button>
+          <button class="filter-btn">Web Development</button>
+          <button class="filter-btn">React</button>
+          <button class="filter-btn">Python</button>
+          <button class="filter-btn">TensorFlow</button>
+          <button class="filter-btn">OpenAI</button>
+        </div>
+        
+        <div class="tutorials-grid">
+          <!-- Tutorial 1 -->
+          <div class="card tutorial-card">
+            <span class="tag">OpenAI</span>
+            <div class="tutorial-content">
+              <div class="difficulty beginner">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Beginner
+              </div>
+              <h3>Build Your Own AI Chatbot with React and OpenAI API</h3>
+              <p>This tutorial guides you through building a smart, conversational chatbot using React and the OpenAI API, perfect for enhancing your web applications with AI.</p>
+            </div>
+            <div class="tutorial-meta">
+              <div class="duration">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                45 min
+              </div>
+              <a href="#" class="read-more">Start Tutorial</a>
+            </div>
+          </div>
+          
+          <!-- Tutorial 2 -->
+          <div class="card tutorial-card">
+            <span class="tag">TensorFlow</span>
+            <div class="tutorial-content">
+              <div class="difficulty intermediate">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Intermediate
+              </div>
+              <h3>Building Image Recognition Models with TensorFlow</h3>
+              <p>Learn how to create and train image recognition models using TensorFlow and implement them in your applications for various use cases.</p>
+            </div>
+            <div class="tutorial-meta">
+              <div class="duration">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                60 min
+              </div>
+              <a href="#" class="read-more">Start Tutorial</a>
+            </div>
+          </div>
+          
+          <!-- Tutorial 3 -->
+          <div class="card tutorial-card">
+            <span class="tag">React</span>
+            <div class="tutorial-content">
+              <div class="difficulty beginner">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Beginner
+              </div>
+              <h3>Creating Responsive UI with React and Tailwind CSS</h3>
+              <p>A step-by-step guide to building beautiful, responsive interfaces using React components styled with Tailwind CSS.</p>
+            </div>
+            <div class="tutorial-meta">
+              <div class="duration">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                30 min
+              </div>
+              <a href="#" class="read-more">Start Tutorial</a>
+            </div>
+          </div>
+          
+          <!-- Tutorial 4 -->
+          <div class="card tutorial-card">
+            <span class="tag">Python</span>
+            <div class="tutorial-content">
+              <div class="difficulty advanced">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Advanced
+              </div>
+              <h3>Building Natural Language Processing Applications</h3>
+              <p>Advanced techniques for implementing NLP models in Python to process and analyze text data for sentiment analysis, entity recognition, and more.</p>
+            </div>
+            <div class="tutorial-meta">
+              <div class="duration">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                75 min
+              </div>
+              <a href="#" class="read-more">Start Tutorial</a>
+            </div>
+          </div>
+          
+          <!-- Tutorial 5 -->
+          <div class="card tutorial-card">
+            <span class="tag">AI</span>
+            <div class="tutorial-content">
+              <div class="difficulty intermediate">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Intermediate
+              </div>
+              <h3>Creating Smart Recommendation Systems</h3>
+              <p>Learn how to design and implement personalized recommendation algorithms for e-commerce, content platforms, and more.</p>
+            </div>
+            <div class="tutorial-meta">
+              <div class="duration">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                55 min
+              </div>
+              <a href="#" class="read-more">Start Tutorial</a>
+            </div>
+          </div>
+          
+          <!-- Tutorial 6 -->
+          <div class="card tutorial-card">
+            <span class="tag">Web Development</span>
+            <div class="tutorial-content">
+              <div class="difficulty beginner">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Beginner
+              </div>
+              <h3>Building Modern Websites with Astro and Tailwind CSS</h3>
+              <p>Discover how to create fast, content-focused websites using Astro framework and style them beautifully with Tailwind CSS.</p>
+            </div>
+            <div class="tutorial-meta">
+              <div class="duration">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                40 min
+              </div>
+              <a href="#" class="read-more">Start Tutorial</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <h2>Request a Tutorial</h2>
+          <p>Don't see what you're looking for? Let us know what topics you'd like us to cover in future tutorials and guides.</p>
+          <a href="/contact.html" class="btn primary">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo-icon">T</div>
+          <span class="logo-text">Tinnie Dev</span>
+        </div>
+        <p>A hub for AI insights and web development trends.</p>
+      </div>
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/tutorials.html">Tutorials</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container">
+        <p>&copy; 2025 Tinnie Dev. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
