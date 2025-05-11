@@ -3,10 +3,19 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
   server: {
     host: '0.0.0.0',
-    port: 5000,
+    port: 5001,
   },
-  site: 'https://tinniedev.com',
+  integrations: [tailwind()],
+  vite: {
+    server: {
+      hmr: {
+        clientPort: 5001,
+        port: 5001,
+      },
+      strictPort: false,
+      cors: true
+    }
+  }
 });
