@@ -1,0 +1,48 @@
+Create the following pages in `src/pages/` with content:
+
+---
+
+1. **index.astro**
+**Title:** Artificial Intelligence & Web Development Trends  
+**Text:** Master today’s dynamic technological landscape with Tinnie Dev’s insights into artificial intelligence and web development trends. Stay ahead in the tech world and unlock your full potential with our expert guidance!
+
+---
+
+2. **blog/artificial-intelligence-blog.astro**
+**Title:** Artificial Intelligence Advancements and Their Impact  
+**Text:** Stay updated with the latest advancements in artificial intelligence (AI) and explore how it is reshaping the technology landscape. Discover the transformative power of AI innovations and their significant impact on various industries.
+
+---
+
+3. **blog/artificial-intelligence-tutorials.astro**
+**Title:** Artificial Intelligence & Web Development Tutorials  
+**Text:** Explore the latest in artificial intelligence and web development with expert tutorials and guides. Learn AI applications, coding techniques, and best practices to enhance your skills and stay ahead in the tech industry.
+
+---
+
+4. **blog/blog-post.astro**
+**Title:** Build Your Own AI Chatbot with React and OpenAI API  
+**Text:** This tutorial guides you through building a smart, conversational chatbot using React and the OpenAI API, perfect for enhancing your web applications with AI.
+
+---
+
+5. **contact.astro**
+**Title:** Contact Our Team for AI News & Tech Insights  
+**Text:** Reach out to our dedicated team via the contact form on our page to inquire about AI news, technology insights, and software development updates. Join our vibrant community today!
+
+---
+
+6. **about.astro**
+**Title:** Join Our Vibrant Community of Tech Enthusiasts  
+**Text:**  
+- Get to know us: At Tinnie Dev, we are more than just a platform; we are a community dedicated to the art and science of coding, creation, and mastery in the digital realm. Founded by a team of passionate developers and tech enthusiasts, we strive to empower, educate, and inspire individuals at every stage of their tech journey.  
+- Our mission: To be the foremost community where coding, creation, and digital mastery converge, fostering innovation, collaboration, and excellence in the tech world.  
+- Our vision: To empower, educate, and inspire individuals in their tech pursuits by providing valuable content, fostering a collaborative space, and promoting continuous learning.
+
+---
+
+📦 Also add:
+- `/public`: a folder for static images (placeholder for now)
+- `/components/Layout.astro` for shared layout
+- `/components/ThemeToggle.astro` for the light/dark switch
+- `/components/SEO.astro` to manage `<head>` metadata
