@@ -11,11 +11,11 @@ const {
   title = 'Tinnie Dev | AI & Web Development Hub',
   description = 'Tech news, AI tutorials, and web development trends. Join our vibrant community of tech enthusiasts at Tinnie Dev.',
   image = '/og-image.png',
-  canonicalURL = new URL(Astro.url.pathname, Astro.site),
+  canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url.href,
   type = 'website',
 } = Astro.props;
 
-const ogImage = new URL(image, Astro.site).href;
+const ogImage = Astro.site ? new URL(image, Astro.site).href : image;
 ---
 
 <!-- Global Metadata -->

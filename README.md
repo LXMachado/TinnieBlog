@@ -12,29 +12,42 @@ A modern, futuristic blog and landing site built for showcasing cutting-edge web
 
 ## 🛠 Tech Stack
 
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Backend**: Node.js (simple static file server)
-- **Styling**: Custom CSS with CSS Variables
+- **Frontend**: Astro.js with TypeScript
+- **Styling**: Tailwind CSS with custom components
+- **Backend**: Express.js API + PostgreSQL database
+- **Build Tools**: Vite (integrated with Astro)
 - **Typography**: Google Fonts (Poppins + Orbitron)
 - **Icons**: Custom SVG logo with theme variants
 
 ## 📁 Project Structure
 
 ```
-├── public/
+├── src/
+│   ├── components/           # Reusable Astro components
+│   │   ├── Layout.astro     # Main layout wrapper
+│   │   ├── Navbar.astro     # Navigation component
+│   │   ├── Footer.astro     # Footer component
+│   │   ├── SEO.astro        # SEO meta tags
+│   │   └── ...              # Other components
+│   ├── layouts/             # Layout templates
+│   │   └── BlogLayout.astro # Blog post layout
+│   ├── pages/               # Application pages and routes
+│   │   ├── index.astro      # Homepage
+│   │   ├── about.astro      # About page
+│   │   ├── contact.astro    # Contact page
+│   │   └── blog/            # Blog pages
+│   └── styles/              # Global styles and CSS
+│       └── global.css       # Main stylesheet
+├── public/                  # Static assets
 │   ├── images/
-│   │   ├── t-dev-dark.svg    # Dark theme logo
-│   │   └── t-dev-light.svg   # Light theme logo
-│   ├── index.html            # Homepage
-│   ├── blog.html             # Blog listing page
-│   ├── tutorials.html        # Tutorials page
-│   ├── about.html            # About page
-│   ├── contact.html          # Contact page
-│   ├── styles.css            # Main stylesheet
-│   ├── script.js             # Theme switching logic
-│   └── favicon.svg           # Site favicon
-├── server.js                 # Node.js server
-└── package.json              # Dependencies
+│   │   ├── t-dev-dark.svg   # Dark theme logo
+│   │   └── t-dev-light.svg  # Light theme logo
+│   └── favicon.svg          # Site favicon
+├── server.js                # Express.js API server
+├── database.js              # PostgreSQL database setup
+├── astro.config.mjs         # Astro configuration
+├── tailwind.config.mjs      # Tailwind CSS configuration
+└── package.json             # Dependencies
 ```
 
 ## 🎨 Design System
@@ -65,55 +78,64 @@ A modern, futuristic blog and landing site built for showcasing cutting-edge web
 ### Installation
 
 1. Clone the repository:
+
 ```bash
-git clone <repository-url>
-cd tinnie-dev
+git clone https://github.com/LXMachado/technology-blog.git
+cd technology-blog
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
-npm start
-# or
+npm run dev
+# or for the Express API server
 node server.js
 ```
 
 4. Open your browser and navigate to:
-```
-http://localhost:5000
+
+```text
+http://localhost:5001
 ```
 
 ## 📄 Pages
 
 ### Homepage (`/`)
+
 - Hero section with call-to-action
-- Featured content cards
+- Featured content cards  
 - Technology showcase
 - Newsletter signup
 
-### Blog (`/blog.html`)
+### Blog (`/blog/`)
+
 - Article listings with categories
 - Search and filter functionality
 - Featured posts section
-- Pagination layout
+- Dynamic routing for individual posts
 
-### Tutorials (`/tutorials.html`)
+### Tutorials (`/blog/artificial-intelligence-tutorials`)
+
 - Tutorial cards with difficulty levels
 - Technology filters
 - Step-by-step guides
 - Code examples
 
-### About (`/about.html`)
+### About (`/about`)
+
 - Mission and vision
 - Team member profiles
 - Company values
 - Technology expertise
 
-### Contact (`/contact.html`)
+### Contact (`/contact`)
+
 - Contact form
 - Social media links
 - Office information
@@ -139,25 +161,36 @@ The site includes a robust dark/light mode system:
 ## 🔧 Customization
 
 ### Adding New Pages
-1. Create new HTML file in `public/` directory
-2. Follow the existing template structure
-3. Update navigation links in all pages
+
+1. Create new `.astro` file in `src/pages/` directory
+2. Follow the existing component structure
+3. Update navigation links in `Navbar.astro`
 4. Add corresponding styles if needed
 
 ### Modifying Colors
-Update CSS variables in `styles.css`:
-```css
-:root {
-  --color-primary: #007afe;
-  --color-primary-light: #00C2FF;
-  /* Add your colors here */
+
+Update Tailwind configuration in `tailwind.config.mjs`:
+
+```javascript
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#007afe',
+        'primary-light': '#00C2FF',
+        // Add your colors here
+      }
+    }
+  }
 }
 ```
 
 ### Adding Content
-- Edit HTML files directly for static content
-- Modify the cards and sections as needed
+
+- Create new `.astro` components in `src/components/`
+- Modify existing pages in `src/pages/`
 - Update images in the `public/images/` directory
+- Use Tailwind CSS classes for styling
 
 ## 📝 License
 
