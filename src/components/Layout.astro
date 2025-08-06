@@ -24,14 +24,18 @@ const { title, description, image } = Astro.props;
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
           return localStorage.getItem('theme');
         }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        // Default to light mode instead of system preference
+        return 'light';
       }
       
       const theme = getThemePreference();
       
       document.documentElement.classList.toggle('dark', theme === 'dark');
       
-      window.localStorage.setItem('theme', theme);
+      // Set default theme in localStorage if not already set
+      if (typeof localStorage !== 'undefined' && !localStorage.getItem('theme')) {
+        localStorage.setItem('theme', 'light');
+      }
     </script>
   </head>
   
