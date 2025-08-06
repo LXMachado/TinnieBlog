@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://localhost:5001',
+  site: 'http://localhost:5000',
   server: {
     host: '0.0.0.0',
     port: 5000
