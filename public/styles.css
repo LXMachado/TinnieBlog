@@ -495,3 +495,151 @@ footer {
     height: 2rem;
   }
 }
+
+/* Loading and feedback styles */
+.loading-placeholder {
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-primary);
+  font-style: italic;
+}
+
+.blog-card, .tutorial-card, .featured-post {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover, .tutorial-card:hover, .featured-post:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.blog-meta, .tutorial-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.category, .difficulty, .technology, .duration {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: white;
+}
+
+.difficulty.beginner {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+}
+
+.difficulty.intermediate {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.difficulty.advanced {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.technology {
+  background: var(--color-accent);
+  color: var(--color-text-dark);
+}
+
+.duration {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-dark);
+}
+
+.dark-mode .technology {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-light);
+}
+
+.dark-mode .duration {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-light);
+}
+
+.blog-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0.25rem 0.5rem;
+  background: var(--color-accent);
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-dark);
+}
+
+.dark-mode .tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-light);
+}
+
+.tutorial-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.featured-post {
+  position: relative;
+}
+
+/* Form feedback styles */
+.form-success {
+  background-color: #22c55e !important;
+}
+
+.form-error {
+  background-color: #ef4444 !important;
+}
+
+/* Responsive adjustments for new elements */
+@media (max-width: 768px) {
+  .blog-meta, .tutorial-meta {
+    gap: 0.5rem;
+  }
+  
+  .tutorial-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .featured-badge {
+    position: static;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+}

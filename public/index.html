@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script src="api.js" defer></script>
 </head>
 <body>
   <header>
@@ -57,27 +58,9 @@
         <h2>Featured Content</h2>
         <p class="section-intro">Discover our most popular articles and tutorials on artificial intelligence and web development.</p>
         
-        <div class="card-grid">
-          <div class="card">
-            <span class="tag">AI</span>
-            <h3>Artificial Intelligence Advancements and Their Impact</h3>
-            <p>Stay updated with the latest advancements in artificial intelligence (AI) and explore how it is reshaping the technology landscape.</p>
-            <a href="/blog.html" class="read-more">Read More</a>
-          </div>
-          
-          <div class="card">
-            <span class="tag">Tutorials</span>
-            <h3>Artificial Intelligence & Web Development Tutorials</h3>
-            <p>Explore the latest in artificial intelligence and web development with expert tutorials and guides.</p>
-            <a href="/tutorials.html" class="read-more">Read More</a>
-          </div>
-          
-          <div class="card">
-            <span class="tag">Tutorial</span>
-            <h3>Build Your Own AI Chatbot with React and OpenAI API</h3>
-            <p>This tutorial guides you through building a smart, conversational chatbot using React and the OpenAI API.</p>
-            <a href="/blog.html" class="read-more">Read More</a>
-          </div>
+        <div class="card-grid" id="featured-content-grid">
+          <!-- Featured content will be loaded dynamically -->
+          <div class="loading-placeholder">Loading featured content...</div>
         </div>
       </div>
     </section>
