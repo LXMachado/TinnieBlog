@@ -73,30 +73,30 @@ npm start</code></pre>
   <h2 class="text-2xl font-bold mb-4">Step 2: Creating the Chat Interface</h2>
   <p class="mb-4">First, let's create a simple chat interface. Create a new file called <code>ChatInterface.js</code> in the <code>src</code> folder:</p>
 
-  <div class="bg-gray-800 text-white p-4 rounded-md mb-6 overflow-x-auto">
+    <div class="bg-gray-800 text-white p-4 rounded-md mb-6 overflow-x-auto">
     <pre><code>import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { FiSend, FiUser, FiCpu } from 'react-icons/fi';
 
-const ChatContainer = styled.div`
+const ChatContainer = styled.div\`
   display: flex;
   flex-direction: column;
   height: 100vh;
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
-`;
+\`;
 
-const ChatHeader = styled.div`
+const ChatHeader = styled.div\`
   background: #007afe;
   color: white;
   padding: 1rem;
   border-radius: 10px 10px 0 0;
   font-weight: bold;
   font-size: 1.2rem;
-`;
+\`;
 
-const MessageArea = styled.div`
+const MessageArea = styled.div\`
   flex: 1;
   overflow-y: auto;
   padding: 1rem;
@@ -106,152 +106,18 @@ const MessageArea = styled.div`
   background: #f5f5f5;
   border-left: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
-`;
+\`;
 
-const InputArea = styled.div`
+const InputArea = styled.div\`
   display: flex;
   padding: 1rem;
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 0 0 10px 10px;
-`;
+\`;
 
-const MessageInput = styled.input`
-  flex: 1;
-  padding: 0.5rem 1rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 20px;
-  outline: none;
-  font-size: 1rem;
-  
-  &:focus {
-    border-color: #007afe;
-  }
-`;
-
-const SendButton = styled.button`
-  background: #007afe;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin-left: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.3s;
-  
-  &:hover {
-    background: #0062cc;
-  }
-`;
-
-const Message = styled.div`
-  padding: 0.8rem 1.5rem;
-  border-radius: 20px;
-  max-width: 80%;
-  line-height: 1.5;
-  position: relative;
-  
-  ${({ isUser }) => isUser ? `
-    align-self: flex-end;
-    background: #007afe;
-    color: white;
-    border-bottom-right-radius: 0;
-  ` : `
-    align-self: flex-start;
-    background: white;
-    color: #333;
-    border-bottom-left-radius: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  `}
-`;
-
-const IconContainer = styled.div`
-  position: absolute;
-  bottom: -15px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  ${({ isUser }) => isUser ? `
-    right: -5px;
-    background: #007afe;
-  ` : `
-    left: -5px;
-    background: #f0f0f0;
-  `}
-`;
-
-const ChatInterface = () => {
-  const [messages, setMessages] = useState([
-    { text: "Hello! I'm your AI assistant. How can I help you today?", isUser: false }
-  ]);
-  const [input, setInput] = useState('');
-  const messageEndRef = useRef(null);
-  
-  // Auto-scroll to the bottom of the chat
-  useEffect(() => {
-    messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
-  
-  const handleSend = () => {
-    if (input.trim() === '') return;
-    
-    // Add user message
-    setMessages([...messages, { text: input, isUser: true }]);
-    
-    // Call API and add bot response (we'll implement this later)
-    // For now, let's just add a placeholder response
-    setTimeout(() => {
-      setMessages(prev => [
-        ...prev, 
-        { 
-          text: "I'm still being set up. The OpenAI integration will come in the next step!", 
-          isUser: false 
-        }
-      ]);
-    }, 1000);
-    
-    setInput('');
-  };
-  
-  return (
-    <ChatContainer>
-      <ChatHeader>AI Chatbot</ChatHeader>
-      <MessageArea>
-        {messages.map((msg, idx) => (
-          <Message key={idx} isUser={msg.isUser}>
-            {msg.text}
-            <IconContainer isUser={msg.isUser}>
-              {msg.isUser ? <FiUser color="white" /> : <FiCpu />}
-            </IconContainer>
-          </Message>
-        ))}
-        <div ref={messageEndRef} />
-      </MessageArea>
-      <InputArea>
-        <MessageInput
-          type="text"
-          placeholder="Type your message..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-        />
-        <SendButton onClick={handleSend}>
-          <FiSend />
-        </SendButton>
-      </InputArea>
-    </ChatContainer>
-  );
-};
-
-export default ChatInterface;</code></pre>
+const MessageInput = styled.input\`
+  flex: 1;</code></pre>
   </div>
 
   <p class="mb-8">This sets up a basic chat interface with a header, message area, and input field. Now we need to integrate it with the OpenAI API.</p>
@@ -281,7 +147,7 @@ const openaiService = {
         {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`
+            'Authorization': \`Bearer \${apiKey}\`
           }
         }
       );
