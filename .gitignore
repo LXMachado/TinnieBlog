@@ -31,6 +31,9 @@ dist/
 .Spotlight-V100
 .Trashes
 
+# Prevent macOS ._ files
+._*
+
 # Windows
 Thumbs.db
 ehthumbs.db
